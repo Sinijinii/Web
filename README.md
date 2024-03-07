@@ -329,3 +329,185 @@
 - position 관련 요소(position, top/right/bottom/left, x-index)등
 
 **상속 여부는 MDN문서에서 확인 가능**
+
+---
+@240307
+# CSS Latout
+
+## CSS Box Model
+
+- 모든 HTML요소를 사각형 박스로 표현하는 개념
+- 내용(Content), 안쪽 여백(Padding), 테두리(border), 외부간격(margin)으로 구성되는 개념
+    
+    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/1848a85f-9836-46e1-8795-3eff9f43f933/b764d94f-e4a6-4f18-85bc-e92f516b920e/Untitled.png)
+    
+
+### Width & height 속성
+
+- 요소의 너비와 높이를 지정
+- 이때 지정되는 요소의 너비와 높이는 콘텐츠 영역을 대상으로 함
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/1848a85f-9836-46e1-8795-3eff9f43f933/e2fda458-57c9-47e8-8fac-4e2066b196cd/Untitled.png)
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/1848a85f-9836-46e1-8795-3eff9f43f933/4d72ec82-e24a-4189-9228-08a872147fb8/Untitled.png)
+
+## 박스 타입
+
+- 항상 새로운 행으로 나뉨
+- Width 와 height 속성을 사용하여 너비와 높이를 지정할 수 있음
+- 기본적으로  width속성을 지정하지 않으면 박스는 inline방향으로 사용 가능한 공간아ㅡㄹ 모두 차지함
+- 대표적인 block 타입 태그
+    - h1~h6, p, div
+
+## inline 타입
+
+- 새로운 행으로 나뉘지 않음
+- width와 height속성을 사용할 수 없음
+- 수직방향
+    - padding, margins, borders가 적용되지만 다른 요소를 밀어낼 수는 없음
+- 수평방향
+    - padding, margins, borders가 적용되어 다른 요소를 밀어낼 수 있음
+- 대표적인 inline타입 태그
+    - a, img, span
+
+### 속성에 따른 수평 정렬
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/1848a85f-9836-46e1-8795-3eff9f43f933/ef2f82dc-5efb-4540-b98c-dc6c456d6a65/Untitled.png)
+
+## 기타 display 속성
+
+### 1. inline - block
+
+- inline과 block 요소 사이의 중간 지점을 제공하는 display값
+- block 요소의 특징을 가짐
+    - width 및 height 속성 사용 가능
+    - padding, margin 및 border로 인해 다른요소가 밀려남
+- 요소가 줄바꿈 되는것을 원하지 않으면서 높이와 너비를 적용하고 싶은 경우에 사용
+
+### 2. none
+
+- 요소를 화면에 표시하지 않고, 공간조차 부여되지 않음
+
+## shorthand 속성 - border
+
+- border-width, border-style, border-color를 한번에 설정하기 위한 속성
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/1848a85f-9836-46e1-8795-3eff9f43f933/8d8be9fb-177e-488e-a09b-1dc0ed418f63/Untitled.png)
+
+## shorthand 속성 - margin and padding
+
+- 4반향의 속성을 각각 지정하지 않고 한번에 지정할 수 있는 속성
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/1848a85f-9836-46e1-8795-3eff9f43f933/c38d9fb7-2884-4609-8d37-cdf029153a6c/Untitled.png)
+
+## 마진 상쇄 - margin collapsing
+
+- 두 block 타입 요소의 margin top과 bottom이 만나 더 큰 margin으로 결함되는 형상
+- 웹 개발자가 레이아웃을 더욱 쉽게 관리할 수 있도록 함
+- 각요소에 대한 상,하 margin을 각각 설정하지 않고 한 요소에 대해서만 설정하기 위함
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/1848a85f-9836-46e1-8795-3eff9f43f933/77e6e7ef-989f-468a-b569-91fbb8f5a540/Untitled.png)
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/1848a85f-9836-46e1-8795-3eff9f43f933/6ca6ffc8-850e-4112-8ec8-7663d4779816/Untitled.png)
+
+---
+
+---
+
+# CSS Posotion
+
+## CSS Layout
+
+- 각 요소의 위치와 크기를 조정하여 웹 페이지의 디자인을 결정하는 것
+- 요소를 Normal Flow에서 제거해 대른 위치로 배치하는 것
+    - 다른 요소 위에 올리기, 화면의 특정 위치에 고정시키기 등
+    
+    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/1848a85f-9836-46e1-8795-3eff9f43f933/defa1cc8-a2f1-4e86-9eac-19c645e5b23f/Untitled.png)
+    
+
+## Position 유형
+
+### 1. static
+
+- 기본값으로 부여를 하지 않아도 됨
+- Normal Flow에 따라 배치
+
+### 2. relative
+
+- 본인의 위치를 기준으로 이동
+- 상대 위치
+    - 본인의 static위치를 기반으로
+
+### 3. absolute
+
+- 요소를 Normal Flow에서 제거
+- 가장 가까운 relative 부모 요소를 기준으로 이동
+- 문서에서 요소가 차지하는 공간이 없어짐
+- 아래에서 작성했던 레이아웃이 많았다면 깨질 위험이 있음
+    - 본인이 차지했던 공간이 사라지기 때문
+    - 본인의 static이 없음
+- static이 아닌 부모요소를 찾아감
+- absolute를 조정할 부모 요소가 중요함
+- 부모에 position: relative;를 줘야함 static불가
+    - 부모가 이동하면 absolute도 이동해야함
+
+### 4. fixed
+
+- 화면에 고정이 되어 있음
+- 요소를 Normal Flow에서 제거
+- 현재 화면 영역(viewport)을 기준으로 이동
+- 문서에서 요소가 파지하는 공간이 없어짐
+
+### 5. sticky
+
+- 요소를 Normal Flow에 따라 배치
+- 요소가 일반적인 문서 흐름에 따라 배치되다 스크롤이 특정 임계점에 도달하면 그 위치에 고정
+- 만약 다음 sticky요소가 고정되어 있던 위치와 다음 sticky 요소의 자리를 대체
+    - 이전 스티키 요소가 고정되어 있던 위치와 다음 요소가 고정되어야 할 위치가 겹치기 때문
+- 임계점이 없다면 Normal Flow
+
+## Z-index
+
+- 요소가 겹쳤을 때 어떤 요소 순으로 위에 나타낼지 결정
+- 정수 값을 사용해 Z축 선서를 지정
+- 더 큰 값을 가진 요소가 작은 값의 요소를 덮음
+
+## Position의 역할
+
+- 전체 페이지에 대한 레이아웃을 구성하는 것이 아닌 **페이지 특정 항목의 위치를 조정**하는 것
+
+## CSS Flexbox
+
+- 요소를 행과 열 형태로 배치하는 1차원 레이아웃 방식
+    - 공간배열 & 정렬
+    
+    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/1848a85f-9836-46e1-8795-3eff9f43f933/390c5160-b599-4a1d-a6d5-f34525996687/Untitled.png)
+    
+
+### main axis(주 축)
+
+- flex item들이 배치되는 기본 축
+- main start에서 시작하여 main end방향으로 배치(기본 값)
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/1848a85f-9836-46e1-8795-3eff9f43f933/fcad5b5a-fb84-4ae5-9dcb-54dbe8d54730/Untitled.png)
+
+### cross axis(교차 축)
+
+- main axis에 수직인 축
+- cross start에서 시작하여 cross end방향으로 배치((기본 값)
+    
+    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/1848a85f-9836-46e1-8795-3eff9f43f933/b9e8faa1-caa9-4b82-81b4-87f5a6d56d94/Untitled.png)
+    
+
+### Flex Container
+
+- display: flex; 혹은 display: inline-flex; 가 설정된 부모 요소
+- 이 컨테이너의 1차 자식 요소들이 Flex item이 됨
+- flexbox속성 값들을 사용하여 자식 요소 Flex item들을 배치하는 주체
+    
+    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/1848a85f-9836-46e1-8795-3eff9f43f933/fbcbf995-60ff-4bc1-b17b-0e15eedef50b/Untitled.png)
+    
+
+### Flex Item
+
+- flex container 내부에 레이아웃 되는 항목
