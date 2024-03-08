@@ -1,0 +1,33 @@
+<!-- 자식 선택자
+자식 선택자는 사이를 공백으로 분리하여 표시하며 자식은 바로 선택 태그 바로 아래 계층에 있는 것이다.-->
+<!-- 자손 선택자
+자식 선택자는 사이를 > 으로 분리하여 표시하며 선택 태그 안에 들어가 있는 모든 것이다.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 자손 */
+    div p {
+      color: blue;
+    }
+    /* 자식 */
+    div > p {
+      color: crimson;
+    }
+
+  </style>
+</head>
+<body>
+  <div>
+    <p>자식</p>
+    <ul>
+      <p>손자</p> 
+    </ul>
+    <p>자식</p>
+  </div>
+</body>
+</html>
